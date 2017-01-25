@@ -48,7 +48,7 @@ changes to your submission during the review process.
 
 #### Before submitting
 
-- Run the tests using `go test ./...`
+- Run the tests using `make ci`
 - Test your change thoroughly
 
 
