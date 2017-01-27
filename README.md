@@ -5,6 +5,7 @@ ANSI escape sequence / unicode aware text wrapping for Go.
 [Code of Conduct](./.github/CONDUCT.md) |
 [Contribution Guidelines](./.github/CONTRIBUTING.md)
 
+[![GitHub release](https://img.shields.io/github/tag/manifoldco/ansiwrap.svg?label=latest)](https://github.com/manifoldco/ansiwrap/releases)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/manifoldco/ansiwrap)
 [![Travis](https://img.shields.io/travis/manifoldco/ansiwrap/master.svg)](https://travis-ci.org/manifoldco/ansiwrap)
 [![Go Report Card](https://goreportcard.com/badge/github.com/manifoldco/ansiwrap)](https://goreportcard.com/report/github.com/manifoldco/ansiwrap)
