@@ -55,7 +55,7 @@ changes to your submission during the review process.
 # Code of Conduct
 
 All community members are expected to adhere to our [code of
-conduct](./CONDUCT.md).
+conduct](../CODE_OF_CONDUCT.md).
 
 
 # License

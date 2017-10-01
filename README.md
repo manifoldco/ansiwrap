@@ -2,7 +2,7 @@
 
 ANSI escape sequence / unicode aware text wrapping for Go.
 
-[Code of Conduct](./.github/CONDUCT.md) |
+[Code of Conduct](./CODE_OF_CONDUCT.md) |
 [Contribution Guidelines](./.github/CONTRIBUTING.md)
 
 [![GitHub release](https://img.shields.io/github/tag/manifoldco/ansiwrap.svg?label=latest)](https://github.com/manifoldco/ansiwrap/releases)
