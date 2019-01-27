@@ -9,7 +9,7 @@ LINTERS=\
 	ineffassign \
 	deadcode
 
-ci: $(LINTERS) test
+ci: $(LINTERS) cover
 
 .PHONY: ci
 
@@ -45,3 +45,6 @@ $(LINTERS):
 	$(METALINT) $@
 
 .PHONY: $(LINTERS) test
+
+cover:
+	@CGO_ENABLED=0 go test -v -coverprofile=coverage.txt -covermode=atomic $$(go list ./... | grep -v vendor)
