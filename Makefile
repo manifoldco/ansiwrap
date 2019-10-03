@@ -18,7 +18,7 @@ ci: $(LINTERS) test
 #################################################
 
 BOOTSTRAP=\
-	github.com/golang/lint/golint \
+	github.com/x/lint/golint \
 	honnef.co/go/tools/cmd/gosimple \
 	github.com/client9/misspell/cmd/misspell \
 	github.com/gordonklaus/ineffassign \
@@ -26,7 +26,7 @@ BOOTSTRAP=\
 	github.com/alecthomas/gometalinter
 
 $(BOOTSTRAP):
-	go get -u $@
+	GO111MODULE=on go get -u $@
 bootstrap: $(BOOTSTRAP)
 
 .PHONY: bootstrap $(BOOTSTRAP)
@@ -36,7 +36,7 @@ bootstrap: $(BOOTSTRAP)
 #################################################
 
 test:
-	@CGO_ENABLED=0 go test -v ./...
+	@CGO_ENABLED=0 GO111MODULE=on go test -v ./...
 
 METALINT=gometalinter --tests --disable-all --vendor --deadline=5m -s data \
 	 ./... --enable
