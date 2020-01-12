@@ -18,7 +18,7 @@ ci: $(LINTERS) test
 #################################################
 
 BOOTSTRAP=\
-	github.com/golang/lint/golint \
+	golang.org/x/lint/golint \
 	honnef.co/go/tools/cmd/gosimple \
 	github.com/client9/misspell/cmd/misspell \
 	github.com/gordonklaus/ineffassign \
