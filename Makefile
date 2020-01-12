@@ -1,15 +1,4 @@
-PKG=github.com/manifoldco/ansiwrap
-
-LINTERS=\
-	gofmt \
-	golint \
-	gosimple \
-	vet \
-	misspell \
-	ineffassign \
-	deadcode
-
-ci: $(LINTERS) test
+ci: lint test
 
 .PHONY: ci
 
@@ -17,19 +6,10 @@ ci: $(LINTERS) test
 # Bootstrapping for base golang package deps
 #################################################
 
-BOOTSTRAP=\
-	github.com/golang/lint/golint \
-	honnef.co/go/tools/cmd/gosimple \
-	github.com/client9/misspell/cmd/misspell \
-	github.com/gordonklaus/ineffassign \
-	github.com/tsenart/deadcode \
-	github.com/alecthomas/gometalinter
+bootstrap:
+	curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh| sh -s v1.21.0
 
-$(BOOTSTRAP):
-	go get -u $@
-bootstrap: $(BOOTSTRAP)
-
-.PHONY: bootstrap $(BOOTSTRAP)
+.PHONY: bootstrap
 
 #################################################
 # Test and linting
@@ -38,10 +18,7 @@ bootstrap: $(BOOTSTRAP)
 test:
 	@CGO_ENABLED=0 go test -v ./...
 
-METALINT=gometalinter --tests --disable-all --vendor --deadline=5m -s data \
-	 ./... --enable
+lint:
+	bin/golangci-lint run ./...
 
-$(LINTERS):
-	$(METALINT) $@
-
-.PHONY: $(LINTERS) test
+.PHONY: lint test
